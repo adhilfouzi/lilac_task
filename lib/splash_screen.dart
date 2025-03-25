@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'app_routes.dart';
 import 'images.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -54,7 +55,8 @@ class SplashScreen extends StatelessWidget {
                 text: "Sign in with phone number",
                 color: Colors.pink,
                 textColor: Colors.white,
-                onPressed: () {},
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.loginWithPhone),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),

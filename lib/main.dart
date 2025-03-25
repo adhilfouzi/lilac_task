@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';
+import 'package:lilac_task/app_routes.dart';
+import 'notfoundscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +13,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Fliq Dating',
+      routes: AppRoutes.routes,
+      initialRoute: AppRoutes.splash,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(), // Set SplashScreen as the initial screen
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      onUnknownRoute: (settings) => MaterialPageRoute(
+        builder: (context) => NotFoundScreen(routeName: settings.name),
+      ),
     );
   }
 }
