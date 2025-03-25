@@ -29,7 +29,15 @@ class MessageScreen extends StatelessWidget {
               SizedBox(height: 16),
               ChatSearchBar(),
               SizedBox(height: 16),
-              Text("Chat", style: TextStyle(fontWeight: FontWeight.bold)),
+              Row(
+                children: [
+                  SizedBox(width: 10),
+                  Text("Chat",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                ],
+              ),
+              SizedBox(height: 16),
               Expanded(child: ChatListSection()),
             ],
           ),
@@ -69,12 +77,12 @@ class ChatListSection extends StatelessWidget {
       builder: (context, provider, child) {
         return ListView.separated(
           itemCount: provider.chatContacts.length,
-          separatorBuilder: (_, __) => Divider(),
+          separatorBuilder: (_, __) => Divider(thickness: 0),
           itemBuilder: (context, index) {
             final user = provider.chatContacts[index];
             return ListTile(
               leading: CircleAvatar(
-                radius: 25,
+                radius: 30,
                 backgroundImage: AssetImage(user.image),
               ),
               title: Text(user.name,

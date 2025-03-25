@@ -4,39 +4,18 @@ import '../../data/models/chat_models.dart';
 
 class UserList {
   final List<ChatUser> storyUsers = [
-    ChatUser(
-        name: "Alice Johnson", image: Images.facebookIcon, time: "9:00 AM"),
-    ChatUser(name: "Bob Smith", image: Images.facebookIcon, time: "9:15 AM"),
-    ChatUser(
-        name: "Charlie Brown", image: Images.facebookIcon, time: "9:30 AM"),
-    ChatUser(name: "Diana Prince", image: Images.facebookIcon, time: "9:45 AM"),
-    ChatUser(name: "Ethan Hunt", image: Images.facebookIcon, time: "10:00 AM"),
-    ChatUser(
-        name: "Fiona Gallagher", image: Images.facebookIcon, time: "10:15 AM"),
-    ChatUser(
-        name: "George Clooney", image: Images.facebookIcon, time: "10:30 AM"),
-    ChatUser(
-        name: "Hannah Montana", image: Images.facebookIcon, time: "10:45 AM"),
-    ChatUser(
-        name: "Ian Somerhalder", image: Images.facebookIcon, time: "11:00 AM"),
-    ChatUser(
-        name: "Julia Roberts", image: Images.facebookIcon, time: "11:15 AM"),
+    ChatUser(name: "Alice Johnson", image: Images.user1, time: "11:15 AM"),
+    ChatUser(name: "Bob Smith", image: Images.user2, time: "11:00 AM"),
+    ChatUser(name: "Charlie Brown", image: Images.user3, time: "10:45 AM"),
+    ChatUser(name: "Diana Prince", image: Images.user4, time: "10:30 AM"),
+    ChatUser(name: "Ethan Hunt", image: Images.user5, time: "10:15 AM"),
   ];
 
   final List<ChatUser> chatUsers = [
-    ChatUser(name: "Alice Johnson", image: Images.googleIcon, time: "9:00 AM"),
-    ChatUser(name: "Bob Smith", image: Images.googleIcon, time: "9:15 AM"),
-    ChatUser(name: "Charlie Brown", image: Images.googleIcon, time: "9:30 AM"),
-    ChatUser(name: "Diana Prince", image: Images.googleIcon, time: "9:45 AM"),
-    ChatUser(name: "Ethan Hunt", image: Images.googleIcon, time: "10:00 AM"),
-    ChatUser(
-        name: "Fiona Gallagher", image: Images.googleIcon, time: "10:15 AM"),
-    ChatUser(
-        name: "George Clooney", image: Images.googleIcon, time: "10:30 AM"),
-    ChatUser(
-        name: "Hannah Montana", image: Images.googleIcon, time: "10:45 AM"),
-    ChatUser(
-        name: "Ian Somerhalder", image: Images.googleIcon, time: "11:00 AM"),
-    ChatUser(name: "Julia Roberts", image: Images.googleIcon, time: "11:15 AM"),
+    ChatUser(name: "Kevin Hart", image: Images.user1, time: "10:05 AM"),
+    ChatUser(name: "Laura Linney", image: Images.user2, time: "9:50 AM"),
+    ChatUser(name: "Michael Scott", image: Images.user3, time: "9:35 AM"),
+    ChatUser(name: "Nancy Drew", image: Images.user4, time: "9:20 AM"),
+    ChatUser(name: "Oscar Wilde", image: Images.user5, time: "9:05 AM"),
   ];
 }
