@@ -1,12 +1,21 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:lilac_task/utils/const/snackbar.dart';
+import 'package:provider/provider.dart';
+
+import '../../utils/routes/app_routes.dart';
+import '../../providers/auth_provider.dart';
 
 class PhoneAuthScreen extends StatelessWidget {
   const PhoneAuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -36,6 +45,7 @@ class PhoneAuthScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             IntlPhoneField(
+              controller: authProvider.phoneController,
               autovalidateMode: AutovalidateMode.onUserInteraction,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -53,7 +63,7 @@ class PhoneAuthScreen extends StatelessWidget {
               ),
               initialCountryCode: 'IN',
               onChanged: (phone) {
-                print(phone.completeNumber);
+                log(phone.completeNumber);
               },
             ),
             const SizedBox(height: 10),
@@ -74,7 +84,12 @@ class PhoneAuthScreen extends StatelessWidget {
                   backgroundColor: Colors.pink,
                 ),
                 onPressed: () {
-                  // Handle navigation to OTP screen
+                  final phone = authProvider.phoneController.text;
+                  if (phone.isNotEmpty) {
+                    Navigator.pushNamed(context, AppRoutes.otp);
+                  } else {
+                    MySnackbar.showInfo(context, "Please enter a phone number");
+                  }
                 },
                 child: Text(
                   "Next",

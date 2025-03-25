@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 
-import 'phone_number_screen.dart';
-import 'splash_screen.dart';
+import '../../feature/auth/otp_screen.dart';
+import '../../feature/auth/phone_number_screen.dart';
+import '../../feature/auth/boarding_screen.dart';
 
 class AppRoutes {
   AppRoutes._();
   // Auth routes
-  static const String splash = '/';
+  static const String boardingScreen = '/';
   static const String loginWithPhone = '/loginWithPhone';
+  static const String otp = '/otp';
+  static const String home = '/home';
   static final Map<String, WidgetBuilder> routes = {
-    splash: (context) => SplashScreen(),
+    boardingScreen: (context) => BoardingScreen(),
     loginWithPhone: (context) => PhoneAuthScreen(),
+    otp: (context) => OTPScreen(),
   };
 
   /// Handles routes dynamically, including those that require arguments.
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      // case category:
-      //   final category = settings.arguments as CategoryModel?;
-      //   if (category != null) {
-      //     return _customPageRoute(
-      //       CategoriesScreen(category: category),
-      //     );
-      //   }
-      //   return _errorRoute();
+      case otp:
+        final phoneNumber = settings.arguments as String?;
+        if (phoneNumber != null) {
+          return _customPageRoute(OTPScreen());
+        }
+        return _errorRoute();
 
       default:
         return _errorRoute();

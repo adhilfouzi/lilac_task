@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'app_routes.dart';
-import 'images.dart';
+import '../../utils/routes/app_routes.dart';
+import '../../utils/const/images.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class BoardingScreen extends StatelessWidget {
+  const BoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           Image.asset(Images.splashScreen, fit: BoxFit.cover),
           Container(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
