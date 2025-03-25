@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../data/models/chat_models.dart';
 import '../../feature/auth/otp_screen.dart';
 import '../../feature/auth/phone_number_screen.dart';
 import '../../feature/auth/boarding_screen.dart';
+import '../../feature/chat/chat_screen.dart';
+import '../../feature/chat/message_screen.dart';
 import '../../feature/home/home_screen.dart';
 
 class AppRoutes {
@@ -12,20 +15,23 @@ class AppRoutes {
   static const String loginWithPhone = '/loginWithPhone';
   static const String otp = '/otp';
   static const String home = '/home';
+  static const String chatScreen = '/chatScreen';
+  static const String messageScreen = '/messageScreen';
   static final Map<String, WidgetBuilder> routes = {
     boardingScreen: (context) => BoardingScreen(),
     loginWithPhone: (context) => PhoneAuthScreen(),
     otp: (context) => OTPScreen(),
-    home: (context) => HomeScreen()
+    home: (context) => HomeScreen(),
+    messageScreen: (context) => MessageScreen(),
   };
 
   /// Handles routes dynamically, including those that require arguments.
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case otp:
-        final phoneNumber = settings.arguments as String?;
-        if (phoneNumber != null) {
-          return _customPageRoute(OTPScreen());
+      case chatScreen:
+        final chatUser = settings.arguments as ChatUser?;
+        if (chatUser != null) {
+          return _customPageRoute(ChatScreen(user: chatUser));
         }
         return _errorRoute();
 

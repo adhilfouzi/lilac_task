@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../chat/message_screen.dart';
+import '../../utils/routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,14 +13,8 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.message),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MessageScreen(),
-                ),
-              );
-            },
+            onPressed: () =>
+                Navigator.pushNamed(context, AppRoutes.messageScreen),
           ),
         ],
       ),
