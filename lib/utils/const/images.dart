@@ -4,4 +4,5 @@ class Images {
   static const String googleIcon = 'assets/google_icon.png';
   static const String facebookIcon = 'assets/facebook_icon.png';
   static const String splashScreen = 'assets/splash_bg.png';
+  static const String chatSearchIcon = "assets/search-favorite.png";
 }

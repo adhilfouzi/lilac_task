@@ -36,6 +36,37 @@ class HttpService {
     }
   }
 
+  static Future<Map<String, dynamic>> getRequest(String url,
+      [bool isPrint = false]) async {
+    _logRequest('GET', url);
+
+    try {
+      final response = await http.get(
+        Uri.parse(url),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      );
+
+      _logResponse('GET', response, url, isPrint);
+
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> data = json.decode(response.body);
+
+        if (data.isNotEmpty) {
+          return data;
+        } else {
+          return {};
+        }
+      } else {
+        throw Exception('Failed to process GET request');
+      }
+    } catch (e) {
+      log("GET request failed with error: $e");
+      return {};
+    }
+  }
+
   static void _logRequest(String method, String url, [String? body]) {
     log('HTTP $method Request: $url');
     if (body != null) log('Request Body: $body');

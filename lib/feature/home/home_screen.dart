@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../chat/message_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -24,22 +26,6 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const Center(
         child: Text('Home Screen Content'),
-      ),
-    );
-  }
-}
-
-class MessageScreen extends StatelessWidget {
-  const MessageScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Message Screen'),
-      ),
-      body: const Center(
-        child: Text('Welcome to the Message Screen!'),
       ),
     );
   }

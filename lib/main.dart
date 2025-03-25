@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lilac_task/utils/routes/app_routes.dart';
 import 'package:provider/provider.dart';
+import 'providers/chat_provider.dart';
 import 'utils/routes/notfoundscreen.dart';
 import 'providers/auth_provider.dart';
 
@@ -9,6 +10,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => ChatProvider()),
       ],
       child: MyApp(),
     ),
