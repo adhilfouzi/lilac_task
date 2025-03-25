@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../feature/auth/otp_screen.dart';
 import '../../feature/auth/phone_number_screen.dart';
 import '../../feature/auth/boarding_screen.dart';
+import '../../feature/home/home_screen.dart';
 
 class AppRoutes {
   AppRoutes._();
@@ -15,6 +16,7 @@ class AppRoutes {
     boardingScreen: (context) => BoardingScreen(),
     loginWithPhone: (context) => PhoneAuthScreen(),
     otp: (context) => OTPScreen(),
+    home: (context) => HomeScreen()
   };
 
   /// Handles routes dynamically, including those that require arguments.

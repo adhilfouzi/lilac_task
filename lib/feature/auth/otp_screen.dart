@@ -6,6 +6,7 @@ import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 import '../../providers/auth_provider.dart';
 import '../../utils/const/snackbar.dart';
+import '../../utils/routes/app_routes.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
@@ -142,6 +143,8 @@ class OTPScreen extends StatelessWidget {
                     if (context.mounted) {
                       MySnackbar.showSuccess(
                           context, authProvider.errorMessage);
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, AppRoutes.home, (route) => false);
                     }
                   }
                 },

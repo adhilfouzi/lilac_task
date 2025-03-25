@@ -47,6 +47,8 @@ class AuthProvider extends ChangeNotifier {
       _errorMessage = "Invalid OTP. Please try again.";
     } else {
       _errorMessage = "OTP verified successfully.";
+      _phoneController.clear();
+      _otpController.clear();
     }
     notifyListeners();
     return success;
